@@ -1,12 +1,22 @@
 <template>
   <div id="app">
+    <h1>The best company in the world :)</h1>
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/categories">Categories</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  created() {
+    this.$store.dispatch("GET_EMPLOYEES");
+  }
+}
+</script>
 
 <style lang="less">
 #app {
@@ -18,14 +28,16 @@
 }
 
 #nav {
-  padding: 30px;
+  padding: .5em;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #444;
+
+    &:hover { color: #777; }
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #999;
     }
   }
 }

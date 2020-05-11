@@ -1,4 +1,4 @@
-# finfort-testtask
+Application for accounting employees of the enterprise with the ability to edit categories such as professions
 
 ## Project setup
 ```
